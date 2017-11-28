@@ -1,0 +1,21 @@
+<div id="card-container">
+    <div id="card">
+        <figure class="front">{{cardFrontHtml}}</figure>
+        <figure class="back">{{cardBackHtml}}</figure>
+    </div>
+
+    <div id="text-container">
+        <input id="response-input" type="text" autofocus autocomplete='off' tabindex="1" ng-keypress="keypressHandler($event)">
+        <div id="button-container">
+            <div tabindex="3" class="accent-character" ng-click="insertChar($event)" ng-keypress="keypressHandler($event)">á</div>
+            <div tabindex="4" class="accent-character" ng-click="insertChar($event)" ng-keypress="keypressHandler($event)">é</div>
+            <div tabindex="5" class="accent-character" ng-click="insertChar($event)" ng-keypress="keypressHandler($event)">í</div>
+            <div tabindex="6" class="accent-character" ng-click="insertChar($event)" ng-keypress="keypressHandler($event)">ó</div>
+            <div tabindex="7" class="accent-character" ng-click="insertChar($event)" ng-keypress="keypressHandler($event)">ú</div>
+            <div tabindex="8" class="accent-character" ng-click="insertChar($event)" ng-keypress="keypressHandler($event)">ü</div>
+            <div tabindex="9" class="accent-character" ng-click="insertChar($event)" ng-keypress="keypressHandler($event)">ñ</div>
+        </div>
+    </div>
+
+    <div id="submit-button" ng-click="submitButtonClickHandler()" ng-keypress="keypressHandler($event)" tabindex="2">Submit</div>
+</div>

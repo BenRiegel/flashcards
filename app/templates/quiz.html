@@ -1,0 +1,15 @@
+<div id="title-bar">
+    <a id="title" ui-sref="main-options">Learn Spanish!</a>
+    <div id="score">Score: {{quizctrl.quiz.score}}</div>
+</div>
+
+
+<div id="viewport">
+
+    <div id="question-info">Question {{quizctrl.quiz.currentQuestionNum}} of {{quizctrl.quiz.totalQuestions}}</div>
+
+    <flashcards card-front-html="{{quizctrl.quiz.currentQuestionPromptHTML}}"
+                card-back-html="{{quizctrl.quiz.currentQuestionResponseHTML}}"
+                on-response="quizctrl.quiz.handleResponse(response)"
+                on-new-card="quizctrl.quiz.handleNewCard()"></flashcards>
+</div>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="spanish">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title></title>
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/quiz.css">
+    <link rel="stylesheet" href="styles/options.css">
+
+</head>
+
+<body>
+    <main>
+        <ui-view></ui-view>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/MainCtrl.js"></script>
+    <script src="/scripts/controllers/ToFromCtrl.js"></script>
+    <script src="/scripts/controllers/QuizCtrl.js"></script>
+    <script src="/scripts/services/Options.js"></script>
+    <script src="/scripts/services/Quiz.js"></script>
+    <script src="/scripts/services/Numbers.js"></script>
+    <script src="/scripts/directives/flashcards.js"></script>
+</body>
+</html>
