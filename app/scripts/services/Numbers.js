@@ -43,7 +43,7 @@
             return thirdDigitLookupObj[hundredsDigit];
         }
 
-        //------------------------------------------------------------------------
+        //----------------------------------------------------------------------
 
         Numbers.getNumberTranslation = function(num){
 
@@ -97,6 +97,40 @@
                 return numText;
             }
         }
+
+        //----------------------------------------------------------------------
+
+        Numbers.getInstructions = function(option){
+            if (option == "from"){
+              return "Write the Number Corresponding To:"
+            } else {
+              return "Write in Spanish Words:"
+            }
+        }
+
+        //----------------------------------------------------------------------
+
+        Numbers.createCards = function(number, fromTo, range){
+            var cards = [];
+            for (var i = 0; i < number; i++){
+                var randomNum = Math.trunc(Math.random() * 1000);
+                var translation = this.getNumberTranslation(randomNum);
+                var card = {target:"", answer:""};
+                if (fromTo == "from"){
+                    card.target = translation;
+                    card.answer = randomNum.toString();
+                } else {
+                    card.target = randomNum.toString();
+                    card.answer = translation;
+                }
+                cards.push(card);
+            }
+            return cards;
+        }
+
+        //----------------------------------------------------------------------
+
+
 
         return Numbers;
     }

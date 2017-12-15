@@ -1,0 +1,18 @@
+<div id="title-bar">
+    <a id="title" ui-sref="primary-options-1">Learn Spanish!</a>
+</div>
+
+<div id="viewport">
+    <div class="options-message">Select Vocabulary List</div>
+    <div class="options-menu">
+        <select class="dropdown-menu" ng-model="OptionsCtrl.options.vocabList">
+            <option value="animals">Animals</option>
+            <option value="body parts">Body Parts</option>
+            <option value="food">Food</option>
+        </select>
+    </div>
+    <div class="options-button-container clearfix">
+        <button class="options-button two" ng-click="OptionsCtrl.options.recordState('vocab-options-1')" ui-sref="quiz-options-1">Next</button>
+        <button class="options-button two" ui-sref="primary-options-2">Done</button>
+    </div>
+</div>

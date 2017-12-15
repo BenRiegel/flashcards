@@ -1,0 +1,18 @@
+<div id="title-bar">
+    <a id="title" ui-sref="primary-options-1">Learn Spanish!</a>
+</div>
+
+<div id="viewport">
+    <div id="secondary-options-message">Select Translation Direction</div>
+    <div id="secondary-options-select-container">
+        <select class="dropdown-menu" ng-model="OptionsCtrl.options.secondary.toFrom">
+            <option value="to">Numbers to Spanish</option>
+            <option value="from">Spanish to Numbers</option>
+        </select>
+    </div>
+    <div id="secondary-options-nav-container" class="clearfix">
+        <button class="secondary-option" ui-sref="primary-options-2">Go Back</button>
+        <button class="secondary-option" ui-sref="numbers-options-2">Next</button>
+        <button class="secondary-option" ui-sref="primary-options-2">Done</button>
+    </div>
+</div>

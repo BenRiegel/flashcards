@@ -1,0 +1,54 @@
+<div id="secondary-options-message">Edit Options for {{OptionsCtrl.options.primary}} Practice</div>
+<div id="secondary-options-container">
+    <div class="secondary-options-division clearfix">
+        <div class="secondary-option" ng-show="OptionsCtrl.options.primary == 'Numbers'">
+            <span class="secondary-option-label">Translation Direction</span>
+            <select class="dropdown-menu" ng-model="OptionsCtrl.options.numbers.toFrom">
+                <option value="to">Numbers to Spanish</option>
+                <option value="from">Spanish to Numbers</option>
+              </select>
+        </div>
+        <div class="secondary-option" ng-show="OptionsCtrl.options.primary == 'Numbers'">
+            <span class="secondary-option-label">Number Range</span>
+            <select class="dropdown-menu" ng-model="OptionsCtrl.options.numbers.numbersRange">
+                <option value="0-999">0 to 999</option>
+                <option value="0-9">0 to 9</option>
+                <option value="10-99">10 to 99</option>
+                <option value="100-999">100 to 999</option>
+            </select>
+       </div>
+       <div class="secondary-option" ng-show="OptionsCtrl.options.primary == 'Verbs'">
+           <span class="secondary-option-label">Verb Tense</span>
+           <select class="dropdown-menu" ng-model="OptionsCtrl.options.verbs.tense">
+               <option value="presentIndicative">Present Indicative</option>
+           </select>
+       </div>
+       <div class="secondary-option" ng-show="OptionsCtrl.options.primary == 'Vocab'">
+           <span class="secondary-option-label">Vocab List</span>
+           <select class="dropdown-menu" ng-model="OptionsCtrl.options.vocab.listName">
+               <option value="animals">Animals</option>
+               <option value="body parts">Body Parts</option>
+               <option value="food">Food</option>
+           </select>
+       </div>
+    </div>
+
+    <div class="secondary-options-division clearfix">
+        <div class="secondary-option">
+            <div class="secondary-option-label">Number of Questions</div>
+            <select class="dropdown-menu" ng-model="OptionsCtrl.options.quiz.totalQuestions">
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="75">75</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <div class="secondary-option">
+            <div class="secondary-option-label">Redo Missed Questions?</div>
+            <select class="dropdown-menu" ng-model="OptionsCtrl.options.quiz.redoMissed">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+    </div>
+</div>

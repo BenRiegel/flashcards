@@ -1,0 +1,7 @@
+<div id="primary-options-button-container" class="clearfix">
+    <a class="primary-option-button"
+              ng-repeat = "option in options"
+              ng-click = "select(option)"
+              ng-class = "(option == selectedOption) ? 'selected' : 'un-selected'"
+              href="">{{option}}</a>
+</div>

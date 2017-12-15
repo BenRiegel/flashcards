@@ -1,0 +1,20 @@
+<div id="title-bar">
+    <a id="title" ui-sref="primary-options-1">Learn Spanish!</a>
+</div>
+
+<div id="viewport">
+    <div class="options-message">Select Total Number of Quiz Questions</div>
+    <div class="options-menu">
+        <select class="dropdown-menu" ng-model="OptionsCtrl.options.totalQuestions">
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="75">75</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+    <div class="options-button-container clearfix">
+        <button class="options-button" ng-click="OptionsCtrl.options.goToPrevState()" ui-sref="{{OptionsCtrl.options.prevStateName}}">Go Back</button>
+        <button class="options-button" ng-click="OptionsCtrl.options.recordState('quiz-options-1')" ui-sref="quiz-options-2">Next</button>
+        <button class="options-button" ui-sref="quiz">Start Quiz</button>
+    </div>
+</div>

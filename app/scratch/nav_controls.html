@@ -1,0 +1,14 @@
+<div id="nav-controls-container">
+    <button class="arrow-container left"
+            ng-class="leftButtonState"
+            ng-disabled="leftButtonState=='disabled'"
+            ng-click = "goToPrevState()">
+        <div class='arrow left'></div>
+    </button>
+    <button class="arrow-container right"
+            ng-class="rightButtonState"
+            ng-disabled="rightButtonState=='disabled'"
+            ng-click = "goToNextState()">
+        <div class='arrow right'></div>
+    </button>
+</div>

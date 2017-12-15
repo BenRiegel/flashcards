@@ -1,47 +1,81 @@
 (function() {
-    function Quiz(Options, Numbers) {
+    function Quiz($rootScope, Options, Numbers) {
 
-      var Quiz = {
-        score: "—",
-        totalQuestions: Options.totalQuestions,
-        currentQuestionNum: 1,
-        numCorrectAnswers: 0,
-        questions: [],
-        currentQuestion: null,
-        currentQuestionPromptHTML: "",
-        currentQuestionResponseHTML: ""
-      };
+        var Quiz = {
+            state: "question",
+            score: "—",
+            totalQuestions: Options.totalQuestions,
+            currentQuestionNum: 1,
+            numAnswers: 0,
+            numCorrectAnswers: 0,
+            questions: [],
+            questionInstructions: "",
+            currentQuestion: null,
+            currentResponseCorrect: false,
+        };
+
+       $rootScope.$on('end-state-event', function(evt, param){
+           if (Quiz.state == "question"){
+               Quiz.scoreAnswer(param);
+               Quiz.state = "answer";
+           } else {
+               Quiz.state = "question";
+               if (Quiz.currentQuestionNum < Quiz.totalQuestions){
+                   Quiz.currentQuestion = Quiz.questions[Quiz.currentQuestionNum+1];
+              }
+           }
+           $rootScope.$broadcast('quiz-state-change', Quiz.state);
+       });
 
 
-      Quiz.handleResponse = function(response){
-          this.currentQuestionPromptHTML = "";
+      $rootScope.$on('flipping-ended', function(){
+          if (Quiz.state == "question"){
+              Quiz.currentQuestionNum++;
+          } else {
+            if (Quiz.currentResponseCorrect){
+              Quiz.numCorrectAnswers++;
+            }
+            Quiz.numAnswers++;
+            Quiz.updateScore();
+          }
+      });
+
+
+      Quiz.updateScore = function(){
+          var percent = (this.numCorrectAnswers / this.numAnswers) * 100;
+          this.score = percent.toFixed(1) + "%";
       }
 
-      Quiz.handleNewCard = function(){
-          this.currentQuestionNum++;
-          this.currentQuestion = this.questions[this.currentQuestionNum-1];
-          this.currentQuestionPromptHTML = this.currentQuestion.promptHTML;
-          this.currentQuestionResponseHTML = this.currentQuestion.responseHTML;
+      Quiz.scoreAnswer = function(answer){
+        //  this.numAnswers++;
+          this.currentResponseCorrect = (this.currentQuestion.answer == answer);
+          if (this.currentResponseCorrect){
+          //    this.numCorrectAnswers++;
+              $rootScope.$broadcast('quiz-answer-correct');
+          } else {
+              $rootScope.$broadcast('quiz-answer-incorrect', this.currentQuestion.answer);
+          }
       }
 
-      for (var i = 0; i < 50; i++){
-         var randomNum = Math.trunc(Math.random() * 1000);
-         var obj = {
-           promptHTML: randomNum,
-           responseHTML: Numbers.getNumberTranslation(randomNum)
-         }
-         Quiz.questions.push(obj);
+
+
+
+      Quiz.createNewQuiz = function(){
+          this.questions = [];
+          this.currentQuestionNum = 1;
+          this.totalQuestions = Options.quiz.totalQuestions;
+
+          if (Options.primary == "Numbers"){
+            this.questions = Numbers.createCards(this.totalQuestions, "to", "0-999");
+            this.questionInstructions = Numbers.getInstructions("to");
+          }
+          Quiz.currentQuestion = this.questions[0];
       }
-
-      Quiz.currentQuestion = Quiz.questions[0];
-      Quiz.currentQuestionPromptHTML = Quiz.currentQuestion.promptHTML;
-      Quiz.currentQuestionResponseHTML = Quiz.currentQuestion.responseHTML;
-
 
       return Quiz;
     }
 
     angular
         .module('spanish')
-        .factory('Quiz', ['Options', 'Numbers', Quiz]);
+        .factory('Quiz', ['$rootScope', 'Options', 'Numbers', Quiz]);
 })();

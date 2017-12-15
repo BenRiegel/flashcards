@@ -1,0 +1,17 @@
+<div id="title-bar">
+    <a id="title" ui-sref="primary-options-1">Learn Spanish!</a>
+</div>
+
+<div id="viewport">
+    <div class="options-message">Return to Missed Questions?</div>
+    <div class="options-menu">
+        <select class="dropdown-menu" ng-model="OptionsCtrl.options.redoMissed">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+    <div class="options-button-container clearfix">
+        <button class="options-button two" ng-click="OptionsCtrl.options.goToPrevState()" ui-sref="{{OptionsCtrl.options.prevStateName}}">Go Back</button>
+        <button class="options-button two" ui-sref="quiz">Start Quiz</button>
+    </div>
+</div>

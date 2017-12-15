@@ -1,0 +1,53 @@
+#primary-options-message{
+  position:absolute;
+  width:100%;
+  top:30%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+#primary-options-button-container{
+  position: absolute;
+  width: 100%;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.primary-option-button{
+  float:left;
+  width:110px;
+  height:50px;
+  line-height: 50px;
+  border: 0px solid #C83131;
+  box-sizing: border-box;
+  border-radius:25px;
+  font-size:18px;
+  text-align: center;
+  text-decoration: none;
+  background-color:white;
+  margin-left:20px;
+  color:black;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.25);
+  box-shadow: inset 0px 0px 8px #C83131;
+}
+
+.primary-option-button:first-child{
+  margin-left:72px;
+}
+.primary-option-button:hover{
+  box-shadow: inset 0px 0px 14px #C83131;
+}
+
+.primary-option-button.selected{
+  background-color: #C83131;
+  color:white;
+}
+
+.primary-option-button.un-selected{
+  background-color: white;
+  color:black;
+}

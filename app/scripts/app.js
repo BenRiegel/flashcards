@@ -7,36 +7,33 @@
             });
 
         $stateProvider
-            .state('main-options', {
+            .state('primary-options', {
                 url: '/',
-                controller: 'MainCtrl as mainctrl',
-                templateUrl: '/templates/main.html'
+                templateUrl: '/templates/primary_options.html',
             })
-            .state('to-from-options', {
-                url: '/to-from',
-                controller: 'ToFromCtrl as tofromctrl',
-                templateUrl: '/templates/tofrom.html'
-            })
-           .state('verb-options', {
-                url: '/verb-options',
-            })
-            .state('numbers-options', {
-                url: '/numbers-options',
-            })
-            .state('vocab-options', {
-                url: '/vocab-options',
-            })
-            .state('quiz-options', {
-                url: '/quiz-options',
+
+            .state('secondary-options', {
+                url: '/options',
+                controller: 'OptionsCtrl as OptionsCtrl',
+                templateUrl: '/templates/secondary_options.html'
             })
             .state('quiz', {
                 url: '/quiz',
-                controller: 'QuizCtrl as quizctrl',
+                controller: 'QuizCtrl as QuizCtrl',
                 templateUrl: '/templates/quiz.html'
+            })
+
+            .state('quiz.numbers', {
+                url: '/numbers',
+                controller: 'FlashcardCtrl as FlashcardCtrl',
+                templateUrl: '/templates/quiz_numbers.html'
             });
+
+
+
     }
 
     angular
-        .module('spanish', ['ui.router', 'ngAnimate'])
+        .module('spanish', ['ui.router', 'ngAnimate', "ngCookies"])
         .config(config);
 })();

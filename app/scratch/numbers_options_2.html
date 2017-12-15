@@ -1,0 +1,19 @@
+<div id="title-bar">
+    <a id="title" ui-sref="primary-options-1">Learn Spanish!</a>
+</div>
+
+<div id="viewport">
+    <div id="secondary-options-message">Select Number Range</div>
+    <div id="secondary-options-select-container">
+        <select class="dropdown-menu" ng-model="OptionsCtrl.options.secondary.numbersRange">
+            <option value="0-999">0 to 999</option>
+            <option value="0-9">0 to 9</option>
+            <option value="10-99">10 to 99</option>
+            <option value="100-999">100 to 999</option>
+        </select>
+    </div>
+    <div id="secondary-options-nav-container" class="clearfix">
+        <button class="secondary-option two" ui-sref="numbers-options-1">Go Back</button>
+        <button class="secondary-option two" ui-sref="primary-options-2">Done</button>
+    </div>
+</div>

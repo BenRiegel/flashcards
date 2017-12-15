@@ -1,15 +1,45 @@
-<div id="title-bar">
-    <a id="title" ui-sref="main-options">Learn Spanish!</a>
-    <div id="score">Score: {{quizctrl.quiz.score}}</div>
+<div id="quiz-sections-container" class="clearfix">
+
+        <div id="quiz-message">Question {{QuizCtrl.quiz.currentQuestionNum}} of {{QuizCtrl.quiz.totalQuestions}}</div>
+        <div id="quiz-element-container">
+            <div id="card-container">
+                <flashcard></flashcard>
+            </div>
+            <form>
+               <spanish-text-input></spanish-text-input>
+               <submit-button></submit-button>
+            </form>
+        </div>
+
 </div>
 
 
-<div id="viewport">
-
-    <div id="question-info">Question {{quizctrl.quiz.currentQuestionNum}} of {{quizctrl.quiz.totalQuestions}}</div>
-
-    <flashcards card-front-html="{{quizctrl.quiz.currentQuestionPromptHTML}}"
-                card-back-html="{{quizctrl.quiz.currentQuestionResponseHTML}}"
-                on-response="quizctrl.quiz.handleResponse(response)"
-                on-new-card="quizctrl.quiz.handleNewCard()"></flashcards>
-</div>
+<!--
+<div id="quiz-sections-container" class="clearfix">
+    <div class="quiz-section">
+        <div class="score-element">
+             <div class="score-element-title">Score</div>
+             <div class="score-element-value">{{QuizCtrl.quiz.score}}</div>
+        </div>
+        <div class="score-element">
+            <div class="score-element-title">Num Answers</div>
+            <div class="score-element-value">{{QuizCtrl.quiz.numAnswers}}</div>
+        </div>
+        <div class="score-element">
+            <div class="score-element-title">Num Correct</div>
+            <div class="score-element-value">{{QuizCtrl.quiz.numCorrectAnswers}}</div>
+        </div>
+    </div>
+    <div class="quiz-section">
+        <div id="quiz-message">Question {{QuizCtrl.quiz.currentQuestionNum}} of {{QuizCtrl.quiz.totalQuestions}}</div>
+        <div id="quiz-element-container">
+            <div id="card-container">
+                <flashcard></flashcard>
+            </div>
+            <form>
+               <spanish-text-input></spanish-text-input>
+               <submit-button></submit-button>
+            </form>
+        </div>
+    </div>
+</div>-->

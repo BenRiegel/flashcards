@@ -1,0 +1,48 @@
+#secondary-options-message{
+  padding-top:20px;
+  width:100%;
+  font-size: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+#secondary-options-container{
+  position: relative;
+  margin:15px 20px 20px 20px;
+  border-radius: 8px;
+  height:211px;
+}
+
+.secondary-options-division{
+  float:left;
+  height:100%;
+  width:50%;
+  border-right:1px solid #d0d0d0;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+.secondary-options-division:last-child{
+  border:0;
+}
+
+.secondary-option{
+  position: relative;
+  padding-left: 30px;
+  text-align: left;
+  margin-top:20px;
+  margin-bottom: 35px;
+}
+
+.secondary-option-label{
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+  font-size:14px;
+  height:15px;
+  line-height: 15px;
+}
+
+.dropdown-menu{
+  min-width: 75px;
+}

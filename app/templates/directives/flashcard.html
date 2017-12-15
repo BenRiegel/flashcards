@@ -1,0 +1,13 @@
+<div id="card">
+    <figure class="front">
+        <div ui-view></div>
+    </figure>
+    <figure class="back">
+        <div id="correct-response" ng-show="currentResponseCorrect == true">Correct!</div>
+        <div id="incorrect-response" ng-show="currentResponseCorrect == false">
+            <div>Incorrect!</div><br>
+            <div>The correct answer is:</div>
+            <div>{{correctAnswer}}</div>
+        </div>
+    </figure>
+</div>
